@@ -1,7 +1,9 @@
 from turtle import Turtle
+
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
+MOVE_INCREMENT = 0.1
 
 
 class Player(Turtle):
@@ -10,7 +12,9 @@ class Player(Turtle):
         self.shape('turtle')
         self.left(90)
         self.penup()
+        self.vel = 0.1
         self.reset_position()
+
 
     def move_up(self):
         new_y = self.ycor() + 20
@@ -18,6 +22,8 @@ class Player(Turtle):
 
     def reset_position(self):
         self.goto(STARTING_POSITION)
+        self.vel *= 0.9
+
 
 
 
